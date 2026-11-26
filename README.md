@@ -1,6 +1,6 @@
 # LoRA Fine-Tune a Tiny Chat Model with Unsloth
 
-Built an end-to-end LoRA fine-tuning pipeline for a 4-bit Qwen2.5-0.5B chat model using Unsloth. Tasks include loading the quantized base, attaching LoRA adapters, formating a tiny instruction dataset, running a supervised fine-tuning job, and generate a reply from the tuned model.
+Build an end-to-end LoRA fine-tuning pipeline for a 4-bit Qwen2.5-0.5B chat model using Unsloth. You'll load the quantized base, attach LoRA adapters, format a tiny instruction dataset, run a featherweight SFT job, and generate a reply from the tuned model.
 
 ## How to run
 
@@ -18,7 +18,7 @@ python scaffold.py
 - [x] **6.** attach_lora_adapters
 - [x] **7.** count_trainable_parameters
 - [x] **8.** trainable_fraction
-- [ ] **9.** build_instruction_examples
+- [x] **9.** build_instruction_examples
 - [ ] **10.** format_instruction_example
 - [ ] **11.** format_all_examples
 - [ ] **12.** build_text_dataset

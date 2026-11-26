@@ -1,5 +1,7 @@
 """
 LoRA Fine-Tune a Tiny Chat Model with Unsloth
+
+Assembled from your step-by-step solutions.
 """
 
 import numpy as np
@@ -74,8 +76,37 @@ def count_trainable_parameters(model):
 def trainable_fraction(trainable_count, total_count):
     return float(trainable_count/total_count)
 
-# Step 9 - build_instruction_examples (not yet solved)
-# TODO: implement
+# Step 9 - build_instruction_examples
+def build_instruction_examples():
+
+    examples = [
+        {
+            "instruction": "Say hello in one short sentence.",
+            "response": "Hello, nice to meet you!"
+        },
+        {
+            "instruction": "What is the capital of Bangladesh?",
+            "response": "Dhaka is the capital of Bangladesh."
+        },
+        {
+            "instruction": "What is 5 plus 3?",
+            "response": "The answer is 8."
+        },
+        {
+            "instruction": "Classify the sentiment: I love this movie.",
+            "response": "Positive"
+        },
+        {
+            "instruction": "Explain machine learning in one sentence.",
+            "response": "Machine learning allows computers to learn patterns from data."
+        },
+        {
+            "instruction": "Translate 'Thank you' into Bengali.",
+            "response": "ধন্যবাদ।"
+        }
+    ]
+
+    return examples
 
 # Step 10 - format_instruction_example (not yet solved)
 # TODO: implement
