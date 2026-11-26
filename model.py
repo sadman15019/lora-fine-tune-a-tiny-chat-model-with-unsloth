@@ -1,7 +1,5 @@
 """
 LoRA Fine-Tune a Tiny Chat Model with Unsloth
-
-Assembled from your step-by-step solutions.
 """
 
 import numpy as np
