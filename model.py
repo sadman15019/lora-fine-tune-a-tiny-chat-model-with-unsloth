@@ -43,8 +43,10 @@ def ensure_pad_token(tokenizer):
     return tokenizer
     pass
 
-# Step 5 - get_lora_target_modules (not yet solved)
-# TODO: implement
+# Step 5 - get_lora_target_modules
+def get_lora_target_modules():
+    return ["q_proj", "k_proj", "v_proj", "o_proj"]
+    pass
 
 # Step 6 - attach_lora_adapters (not yet solved)
 # TODO: implement
