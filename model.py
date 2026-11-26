@@ -122,8 +122,12 @@ def format_all_examples(examples):
 
     return formatedList
 
-# Step 12 - build_text_dataset (not yet solved)
-# TODO: implement
+# Step 12 - build_text_dataset
+from datasets import Dataset
+
+def build_text_dataset(texts):
+    dataset = Dataset.from_dict({"text":texts})
+    return dataset
 
 # Step 13 - tokenize_text (not yet solved)
 # TODO: implement
