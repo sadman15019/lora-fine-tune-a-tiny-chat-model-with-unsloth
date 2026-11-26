@@ -113,8 +113,14 @@ def format_instruction_example(example):
    str =  '### Instruction:\n'+example['instruction']+'\n\n### Response:\n'+example['response']
    return str
 
-# Step 11 - format_all_examples (not yet solved)
-# TODO: implement
+# Step 11 - format_all_examples
+def format_all_examples(examples):
+    formatedList  = []
+    for example in examples:
+        str = format_instruction_example(example)
+        formatedList.append(str)
+
+    return formatedList
 
 # Step 12 - build_text_dataset (not yet solved)
 # TODO: implement
