@@ -208,8 +208,12 @@ def run_sft_training(trainer):
 
     return float(metrics["train_loss"])
 
-# Step 18 - switch_to_inference_mode (not yet solved)
-# TODO: implement
+# Step 18 - switch_to_inference_mode
+def switch_to_inference_mode(model):
+
+    FastLanguageModel.for_inference(model)
+
+    return model
 
 # Step 19 - build_chat_prompt (not yet solved)
 # TODO: implement
