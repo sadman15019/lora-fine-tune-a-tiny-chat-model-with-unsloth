@@ -233,6 +233,32 @@ def build_chat_prompt(tokenizer, instruction):
 
     return prompt
 
-# Step 20 - generate_reply (not yet solved)
-# TODO: implement
+# Step 20 - generate_reply
+def generate_reply(model, tokenizer, prompt, max_new_tokens=32):
+
+    inputs = tokenizer(
+        prompt,
+        return_tensors = "pt",
+        add_special_tokens= False
+    ).to(model.device)
+
+
+    with torch.inference_mode():
+
+        output = model.generate(
+            **inputs,
+            max_new_tokens = max_new_tokens,
+            do_sample= False
+        )
+
+    input_length = inputs["input_ids"].shape[1]
+
+    generated_ids = output[0, input_length:]
+
+    reply = tokenizer.decode(
+        generated_ids,
+        skip_special_tokens = True
+    )
+
+    return reply
 
