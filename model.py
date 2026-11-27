@@ -170,8 +170,34 @@ def build_training_arguments(output_dir='./sft_out', max_steps=5, learning_rate=
 
     return trainingArguments
 
-# Step 16 - build_sft_trainer (not yet solved)
-# TODO: implement
+# Step 16 - build_sft_trainer
+from trl import SFTTrainer, SFTConfig
+
+def build_sft_trainer(model, tokenizer, dataset, training_args, max_seq_length=256):
+    sft_config = SFTConfig(
+        output_dir = training_args.output_dir,
+        per_device_train_batch_size = training_args.per_device_train_batch_size,
+        gradient_accumulation_steps= training_args.gradient_accumulation_steps,
+        max_steps= training_args.max_steps,
+        learning_rate= training_args.learning_rate,
+        bf16= training_args.bf16,
+        fp16= training_args.fp16,
+        logging_steps=training_args.logging_steps,
+        optim= training_args.optim,
+        report_to= training_args.report_to,
+        dataset_text_field = "text",
+        max_length = max_seq_length,
+        packing = "False"
+    )
+
+    trainer = SFTTrainer(
+        model = model,
+        processing_class = tokenizer,
+        train_dataset = dataset,
+        args = sft_config
+    )
+
+    return trainer
 
 # Step 17 - run_sft_training (not yet solved)
 # TODO: implement
