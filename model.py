@@ -215,8 +215,23 @@ def switch_to_inference_mode(model):
 
     return model
 
-# Step 19 - build_chat_prompt (not yet solved)
-# TODO: implement
+# Step 19 - build_chat_prompt
+def build_chat_prompt(tokenizer, instruction):
+
+    messages = [
+        {
+        "role":"user",
+        "content": instruction
+        }
+    ]
+
+    prompt = tokenizer.apply_chat_template(
+        messages,
+        tokenize = False,
+        add_generation_prompt= True
+    )
+
+    return prompt
 
 # Step 20 - generate_reply (not yet solved)
 # TODO: implement
