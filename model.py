@@ -139,8 +139,9 @@ def tokenize_text(tokenizer, text):
 
     return encoded['input_ids']
 
-# Step 14 - count_tokens (not yet solved)
-# TODO: implement
+# Step 14 - count_tokens
+def count_tokens(input_ids):
+    return len(input_ids)
 
 # Step 15 - build_training_arguments (not yet solved)
 # TODO: implement
